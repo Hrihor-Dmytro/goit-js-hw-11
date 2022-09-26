@@ -45,14 +45,16 @@
   display: none;
 }
 
-.gallery__link {
-  margin-right: 10px;
-}
+// .gallery__link {
+//   margin-right: 10px;
+// }
 .gallery {
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
+  justify-content: space-evenly;
 }
 .gallery__img {
   width: inherit;
@@ -66,4 +68,12 @@
 }
 .photo-card {
   width: 400px;
+}
+.info-item {
+  margin: 0;
+  padding: 5px;
+  color: #2f2f37;
+}
+.gallery__link {
+  text-decoration: none;
 }
