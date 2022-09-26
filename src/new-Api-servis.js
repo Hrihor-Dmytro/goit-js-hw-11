@@ -6,16 +6,12 @@ export default class NewApiService {
     this.page = 1;
   }
   async fetchArticles() {
+    const BASE_URL = `https://pixabay.com/api/`;
+    const KEY = `30150755-c61622b73d763821aed9d9577`;
     const url = await axios.get(
-      `https://pixabay.com/api/?key=30150755-c61622b73d763821aed9d9577&q=${this.searchQuery}&per_page=40&page=${this.page}`
+      `${BASE_URL}?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`
     );
     return url.data;
-
-    // fetch(url)
-    //   .then(r => r.json())
-    //   .then(() => {
-    //     this.incrementPage();
-    //   });
   }
   get query() {
     return this.searchQuery;

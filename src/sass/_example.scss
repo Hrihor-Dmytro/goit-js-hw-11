@@ -41,3 +41,15 @@
   border: 1px solid rgb(1, 1, 1);
   border-radius: 5px;
 }
+.is-hidden {
+  display: none;
+}
+
+.gallery__link {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
