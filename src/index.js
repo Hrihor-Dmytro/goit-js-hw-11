@@ -59,7 +59,7 @@ function renderGallery(elements) {
   const markup = elements
     .map(
       ({
-        userImageURL,
+        webformatURL,
         largeImageURL,
         tags,
         likes,
@@ -70,7 +70,7 @@ function renderGallery(elements) {
         return `
             <a class="gallery__link" href="${largeImageURL}">
                 <div class="photo-card">
-                    <img class="gallery__img" src="${userImageURL}" alt="${tags}" loading="lazy" />
+                    <img class="gallery__img" src="${webformatURL}" alt="${tags}" loading="lazy" />
                     <div class="info">
                         <p class="info-item">
                             <b>Likes</b>

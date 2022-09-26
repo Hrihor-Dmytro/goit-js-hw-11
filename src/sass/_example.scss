@@ -46,10 +46,24 @@
 }
 
 .gallery__link {
-  display: flex;
-  flex-wrap: wrap;
+  margin-right: 10px;
 }
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+.gallery__img {
+  width: inherit;
+  height: 268px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.photo-card {
+  width: 400px;
 }
