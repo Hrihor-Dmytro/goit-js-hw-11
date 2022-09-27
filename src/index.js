@@ -29,9 +29,9 @@ function onMore() {
   newApiService.incrementPage();
   fetchImages();
 }
-onLoadMore.classList.add('is-hidden');
 
 async function fetchImages() {
+  onLoadMore.classList.add('is-hidden');
   const response = await newApiService.fetchArticles();
   const { hits, total } = response;
 
