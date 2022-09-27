@@ -9,15 +9,14 @@ const serchForm = document.querySelector('.search-form');
 const onLoadMore = document.querySelector('[data-action="js-load-more"]');
 const galleryEl = document.querySelector('.gallery');
 
-let isShown = 0;
-
 serchForm.addEventListener('submit', onSerch);
 onLoadMore.addEventListener('click', onMore);
-
+let isShown = 0;
 function onSerch(e) {
   e.preventDefault();
 
   isShown = 0;
+
   galleryEl.innerHTML = '';
 
   newApiService.query = e.target.elements.searchQuery.value.trim();
@@ -31,8 +30,8 @@ function onMore() {
 }
 
 async function fetchImages() {
-  onLoadMore.classList.add('is-hidden');
   const response = await newApiService.fetchArticles();
+
   const { hits, total } = response;
 
   if (!hits.length) {
@@ -54,6 +53,7 @@ async function fetchImages() {
     );
   }
 }
+let simpleLightBox = new SimpleLightbox('.gallery a');
 
 function renderGallery(elements) {
   const markup = elements
@@ -97,5 +97,5 @@ function renderGallery(elements) {
     .join('');
 
   galleryEl.insertAdjacentHTML('beforeend', markup);
-  const simpleLightBox = new SimpleLightbox('.gallery a');
+  simpleLightBox.refresh();
 }
