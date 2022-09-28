@@ -41,7 +41,7 @@ async function fetchImages() {
   }
 
   renderGallery(hits);
-
+  isShown = 0;
   isShown += hits.length;
 
   if (isShown < total) {
